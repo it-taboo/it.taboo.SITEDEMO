@@ -1,0 +1,296 @@
+@font-face {
+    font-family: Futura;
+    src: url('./fonts/Futura\ PT.ttf');
+}
+
+.divination {
+    background: #e6e6ff;
+    z-index: -5;
+    padding: 20px;
+}
+
+.select,.div-select, .title, .result {
+    z-index: 2;
+}
+
+.divination {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+h2, p {
+    color: #596dff;
+}
+
+.card > p, .c > p {
+    color: #ffffff;
+}
+
+.title1 {
+    margin: 0 auto;
+    width: 400px;
+    text-align: center;
+}
+
+.title1 > h2 {
+    font-size: 100px;
+    color: rgb(255, 36, 120);
+    color: rgb(31, 84, 255);
+}
+
+.div-select {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 0 auto;
+    width: 800px;
+}
+
+.div-select > h2 {
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.div-choose {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.082);
+    border-radius: 40px;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 620px;
+    height: 80px;
+}
+
+.a {
+    font-size: 30px;
+    height: 40px;
+}
+
+.life {
+    display: flex;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #b82e73, #cc1e83);
+    background: linear-gradient(90deg, #ff80c0, #ff3eaf);
+    width: 150px;
+    height: 50px;
+    justify-content: center;
+    padding-top: 5px;
+
+    cursor: pointer;
+}
+
+.love {
+    display: flex;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #b31a85, #490b9b);
+    background: linear-gradient(90deg, #ff57cd, #8324ff);
+    width: 150px;
+    height: 50px;
+    justify-content: center;
+    padding-top: 5px;
+
+    cursor: pointer;
+}
+
+.other {
+    display: flex;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #580eac, #3706a8);
+    background: linear-gradient(90deg, #993fff, #5107ff);
+    width: 300px;
+    height: 50px;
+    justify-content: center;
+    padding-top: 5px;
+
+    cursor: pointer;
+}
+
+.c:active {
+    opacity: 50%;
+}
+
+.div-input {
+    width: 400px;
+    height: 60px;
+    margin: 0 auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 40px;
+    outline-width: 0px;
+
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    border: none;
+
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+}
+
+.div-input::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.divinate {
+    width: 200px;
+    height: 60px;
+    border: none;
+    border-radius: 30px;
+    font-size: 40px;
+
+    margin: 0 auto;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.tilt {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border-top: 1px rgba(255, 255, 255, 0.1) solid;
+    border-left: 1px rgba(255, 255, 255, 0.1) solid;
+    border-right: 1px rgba(0, 0, 0, 0.1) solid;
+    border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
+    border-radius: 30px;
+
+    width: 300px;
+    height: 350px;
+
+    animation: show 1s;
+}
+
+.div-result {
+    margin: 0 auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 1300px;
+    height: 400px;
+}
+
+.part-card {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+}
+
+.part-card > p {
+    font-size: 20px;
+}
+
+.part-card > h2 {
+    font-size: 50px;
+}
+
+.cards {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 90px;
+    width: 400px;
+}
+
+.card {
+    width: 40px;
+    height: 60px;
+
+    backdrop-filter: blur(5px);
+    border-top: 1px rgba(255, 255, 255, 0.1) solid;
+    border-left: 1px rgba(255, 255, 255, 0.1) solid;
+    border-right: 1px rgba(0, 0, 0, 0.1) solid;
+    border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
+    border-radius: 10px;
+
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.171);
+}
+
+.b1 {
+    background: rgba(71, 135, 255, 0.1);
+}
+
+.b2 {
+    background: rgba(107, 107, 255, 0.2);
+}
+
+.b3 {
+    background: rgba(76, 0, 255, 0.1);
+}
+
+.card > p {
+    font-size: 30px;
+    margin-top: 9px;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0%;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.b1 {
+    transform: rotate(-30deg);
+    margin-top: 10px;
+    margin-right: -10px;
+}
+
+.b3 {
+    transform: rotate(30deg);
+    margin-top: 10px;
+    margin-left: -10px;
+}
+
+.circle9 {
+    position: absolute;
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+
+    margin-left: 23%;
+    margin-top: 10%;
+    z-index: 0;
+}
+
+.circle10 {
+    position: absolute;
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+
+    margin-left: 55%;
+    margin-top: 27%;
+    z-index: 0;
+}
+
+@media screen and (max-width: 900px) {
+    html {
+        width: 100%;
+    }
+    .div-result {
+        display: flex;
+        width: 550px;
+        height: 600px;
+    }
+    .tilt {
+        width: 260px;
+        height: 280px;
+    }
+    .cards {
+        margin-left: 75px;
+    }
+    .circle9 {
+        margin-top: 20%;
+        margin-left: 0%;
+    }
+    .circle10 {
+        margin-top: 60%;
+    }
+}

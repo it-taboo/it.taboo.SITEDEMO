@@ -1,0 +1,159 @@
+@font-face {
+    font-family: Futura;
+    src: url('./fonts/Futura\ PT.ttf');
+}
+
+@font-face {
+    font-family: MrDafoe;
+    src: url('./fonts/MrDafoe-Regular.ttf');
+}
+
+.tilt1 {
+    margin: 0 auto;
+    width: 350px;
+
+    backdrop-filter: blur(5px);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    height: 1000px;
+}
+
+.calc {
+    margin-top: 200px;
+    width: 350px;
+    height: 562px;
+    margin: 30px auto;
+
+    background-color: transparent;
+
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 30px;
+
+    backdrop-filter: blur(5px);
+
+    box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.452);
+}
+
+.circle1 {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #62b3ff 15%, #2d0dff);
+    width: 400px;
+    height: 400px;
+
+    margin-left: 27%;
+    margin-top: 5%;
+}
+
+.circle2 {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(70deg, #5398ff, #2b3ff8);
+    width: 200px;
+    height: 200px;
+
+    margin-left: 55%;
+    margin-top: 23%;
+}
+
+.title {
+    margin: 20px auto;
+}
+
+h1 {
+    font-family: Futura;
+    font-size: 80px;
+    color: white;
+}
+
+.btn {
+    width: 87.5px;
+    height: 64px;
+    font-size: 30px;
+    font-family: Futura;
+    justify-content: center;
+    text-align: center;
+    padding-top: 20px;
+
+    color: white;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.btn p {
+    display: flex;
+}
+
+.btn:hover {
+    background: linear-gradient(110deg, #aa7dff75, #8527ff77);
+    color: white;
+}
+
+.btn:active {
+    background: linear-gradient(110deg, #aa7dff75, #8527ff77);
+}
+
+.btn1 {
+    border-bottom-left-radius: 30px;
+}
+
+.btn2 {
+    border-bottom-right-radius: 30px;
+}
+
+.two-blocks {
+    width: 175px;
+}
+
+.textarea {
+    color: white;
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    border: none;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color: transparent;
+
+    font-family: Futura;
+    font-size: 60px;
+    outline-width: 0px;
+}
+
+.textarea:hover {
+    background: linear-gradient(110deg, #aa7dff75, #8527ff77);
+}
+
+.textarea::placeholder {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 900px) {
+    .calculator {
+        height: 1000px;
+    }
+    .circle1 {
+        width: 250px;
+        height: 250px;
+        margin-left: 10%;
+        margin-top: 20%;
+    }
+    .circle2 {
+        width: 150px;
+        height: 150px;
+        margin-left: 65%;
+        margin-top: 60%;
+    }
+    .calc-vanilla {
+        margin: 0 auto;
+        width: 770px;
+    }
+    .select {
+        left: -5%;
+    }
+}

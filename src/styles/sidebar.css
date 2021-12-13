@@ -1,0 +1,135 @@
+@font-face {
+    font-family: Futura;
+    src: url('./fonts/Futura\ PT.ttf');
+}
+
+* {
+    font-family: Futura;
+}
+
+.sidebar {
+    position: fixed;
+    /*background: linear-gradient(110deg, #ff2768, #ff5e2d);
+    background: linear-gradient(110deg, #2735ff, #c32dff);
+    background: linear-gradient(110deg, #27bbff, #6c2dff);
+    background: linear-gradient(110deg, #ffdf27, #ff812d);
+    background: linear-gradient(110deg, #ff2781, #2df1ff);
+    background: linear-gradient(110deg, #27fff4, #2d42ff);*/
+    background: linear-gradient(110deg, #7da0ff 15%, #3700ff);
+    height: 100%;
+    width: 270px;
+    transition: all 2s;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 5;
+}
+
+.header {
+    margin-top: 10px;
+    display: flex;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+nav {
+    cursor: pointer;
+}
+
+.header > i, .header > p {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.header > i {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.elements {
+    margin-top: 10px;
+}
+
+.el {
+    display: flex;
+    backdrop-filter: blur(5px);
+    width: 270px;
+    height: 66px;
+    justify-items: center;
+    align-items: center;
+    transition: all 2s;
+}
+
+.fas, .name {
+    font-size: 25px;
+    color: white;
+    background-color: transparent;
+    margin-bottom: 5px;
+    transition: all 0.5s;
+    text-decoration: none;
+}
+
+.el > .fas, .el > .name {
+    margin-right: 10px;
+}
+
+.el > .fas {
+    margin-left: 20px;
+}
+
+.calcul {
+    margin-left: 10px;
+}
+
+.game {
+    margin-left: 5px;
+}
+
+.weather {
+    margin-left: 2px;
+}
+
+.table {
+    margin-left: 10px;
+}
+
+.fa-gamepad::before {
+    margin-left: -4px;
+}
+
+.fa-cloud::before {
+    margin-left: -2px;
+}
+
+.fa-file-alt::before {
+    margin-left: 3px;
+}
+
+.sub-el-div {
+    transition: all 1s;
+}
+
+.sub-el {
+    display: flex;
+    backdrop-filter: blur(5px);
+    width: 270px;
+    height: 45px;
+    justify-items: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.sub-el > .fas, .sub-el > .name {
+    margin-right: 16px;
+    background-color: transparent;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 5px;
+    transition: all 0.5s;
+}
+
+.sub-el > .fas {
+    margin-left: 23px;
+}

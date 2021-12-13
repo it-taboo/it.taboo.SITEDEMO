@@ -1,0 +1,51 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+html {
+    /*background: url('./img/bg.png');*/
+}
+
+.theme {
+    position: absolute;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    margin-left: 90%;
+    margin-top: 2%;
+    z-index: 10;
+}
+
+.theme > p {
+    margin: 0 auto;
+}
+
+.select {
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(90deg, #80a2ff, #3e5bff);
+    border-radius: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.select > p {
+    font-size: 23px;
+    margin-top: 7px;
+    color: white;
+}
+
+.select:hover {
+    opacity: 90%;
+}
+
+.select:active {
+    opacity: 50%;
+}
+
+@media screen and (max-width: 900px) {
+    .theme {
+        margin-left: 75%;
+    }
+}
