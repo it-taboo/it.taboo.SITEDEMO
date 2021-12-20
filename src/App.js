@@ -8,10 +8,11 @@ import Calculator from './pages/Calculator.jsx';
 import Divination from './pages/Divination.jsx';
 import Sidebar from './pages/global/sidebar.jsx';
 import Tests from './pages/Tests';
+import Effect from './components/effect.jsx'
 
 import CurPage from './pages/Current.jsx';
 
-import { BrowserRouter, Link, Route, Routes} from 'react-router-dom';
+import { HashRouter, Link, Route, Routes} from 'react-router-dom';
 
 function App() {
     const [darkColors, changeDark] = useState(['linear-gradient(90deg, #3c61c9, #243cc4)', 'linear-gradient(90deg, #243cc4, rgb(41, 26, 173))', 'linear-gradient(90deg, rgb(41, 26, 173), #28057a)', 'linear-gradient(90deg, #3c61c9, #243cc4, rgb(41, 26, 173), #28057a)'])
@@ -27,6 +28,7 @@ function App() {
     const [calccol, changeCalccol] = useState('rgba(0, 0, 0, 0.4)')
 
     const [sidebarBg, changeSidebar] = useState('linear-gradient(110deg, #7da0ff 15%, #3700ff)')
+    const [testbg, changeTest] = useState('#5f77ff73')
     
     function changeTheme1() {
         if(theme === 'Светлая') {
@@ -42,6 +44,7 @@ function App() {
             changeCalccol('rgba(255, 255, 255, 0.4)')
 
             changeSidebar('linear-gradient(110deg, #ff4e98 15%, #b700ff)')
+            changeTest('#ff5f9c73')
         }
         if(theme === 'Тёмная') {
             changeTheme('Светлая')
@@ -56,11 +59,12 @@ function App() {
             changeCalccol('rgba(0, 0, 0, 0.4)')
 
             changeSidebar('linear-gradient(110deg, #7da0ff 15%, #3700ff)')
+            changeTest('#5f77ff73')
         }
         console.log('Тема сменена на ' + theme)
     }
     return (
-        <BrowserRouter>
+        <HashRouter>
             <div className = 'App'>
                 <div className = 'theme'>
                     <div style = {{background: lightColors[0]}} className = 'select' onClick = {changeTheme1}>
@@ -76,10 +80,10 @@ function App() {
                     <Route path = '/' element = {<MainPage bg = {background} h1col = {h1col} textcol = {textColor} lc = {lightColors}/>}></Route>
                     <Route path = '/calculator' element = {<Calculator h1col = {h1col} lc = {lightColors} bg = {background} calcbg = {calcbg} calccol = {calccol}/>}></Route>
                     <Route path = '/divination' element = {<Divination textcol = {textColor} bg = {background} dc = {darkColors} lc = {lightColors} h1col = {h1col} opacity = {opacity1}/>}></Route>
-                    <Route path = '/tests' element = {<Tests/>}></Route>
+                    <Route path = '/tests' element = {<Tests h1col = {h1col} textcol = {textColor} bg = {background} lc = {lightColors} testbg = {testbg}/>}></Route>
                 </Routes>
             </div>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
