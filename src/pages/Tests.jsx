@@ -1,4 +1,4 @@
-import test from "../tests";
+import test from "../arrays/rustests";
 import './../styles/tests.css'
 
 import { useState } from 'react/cjs/react.development'

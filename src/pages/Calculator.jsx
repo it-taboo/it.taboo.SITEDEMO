@@ -7,12 +7,11 @@ import Tilt from 'react-vanilla-tilt'
 
 const Calculator = (props) => {
     const [problem, createProblem] = useState('')
-    console.log(problem)
 
     const Button = (props) => {
         if(props.twoBlocks === 'True') {
 
-            if(props.number === 'Удалить') {
+            if(props.number === 'Удалить' || props.number === 'Delete') {
                 return (
                     <div className = 'btn two-blocks' onClick = {() => {
                         let letters = []
@@ -46,13 +45,13 @@ const Calculator = (props) => {
 
             if(props.number === '+') {
                 return (
-                    <div className = 'btn btn2'>{props.number}</div>
+                    <div onClick = {() => {createProblem(problem + props.number)}} className = 'btn btn2'>{props.number}</div>
                 )
             }
 
             if(props.number === '.') {
                 return (
-                    <div className = 'btn btn1'>{props.number}</div>
+                    <div onClick = {() => {createProblem(problem + props.number)}} className = 'btn btn1'>{props.number}</div>
                 )
             }
             
@@ -75,26 +74,26 @@ const Calculator = (props) => {
         }
     }
 
-    const Input = () => {
+    const Input = (props) => {
         return (
-            <input readonly = 'True' placeholder = 'Поле ввода' className = 'textarea' onChange = {event => {props.getAnswer(event.target.value)}} value = {problem}></input>
+            <input readonly = 'True' placeholder = {props.text['calculator'][2]} className = 'textarea' onChange = {event => {props.getAnswer(event.target.value)}} value = {problem}></input>
         )
     }
 
     return (
-        <div className = 'calculator' style = {{background: props.bg}}>
+        <div className = 'calculator' style = {{background: props.colors['background']}}>
             <div className = 'title'>
-                <h1 style = {{color: props.h1col}}>Калькулятор</h1>
+                <h1 style = {{color: props.colors['h1']}}>{props.text['calculator'][0]}</h1>
             </div>
             <div className = 'calc-vanilla'>
-                <div style = {{background: props.lc[0]}} className = 'circle1'></div>
-                <div style = {{background: props.lc[1]}} className = 'circle2'></div>
-                <Tilt className = 'tilt1' style = {{background: props.calcbg}}>
+                <div style = {{background: props.colors['gradient1'][0]}} className = 'circle1'></div>
+                <div style = {{background: props.colors['gradient1'][1]}} className = 'circle2'></div>
+                <Tilt className = 'tilt1' style = {{background: props.colors['calcBg']}}>
                     <div className='calc'>
-                        <Input/>
+                        <Input text = {props.text}/>
                         <Button number = '00'/>
                         <Button number = 'C'/>
-                        <Button number = 'Удалить' twoBlocks = 'True'/>
+                        <Button number = {props.text['calculator'][1]} twoBlocks = 'True'/>
                         <Button number = '7'/>
                         <Button number = '8'/>
                         <Button number = '9'/>

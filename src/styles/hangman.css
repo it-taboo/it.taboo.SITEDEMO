@@ -1,0 +1,251 @@
+.main-hg {
+    background: #e6e6ff;
+    height: 1000px;
+}
+
+.game-start-hg {
+    margin: 30px auto;
+    text-align: center;
+    width: 360px;
+}
+
+.game-start-hg > p {
+    font-size: 60px;
+}
+
+.lives {
+    font-size: 60px;
+    margin: 30px auto;
+    text-align: center;
+    width: 60px;
+}
+
+.input {
+    margin: 0 auto;
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.ltr-input {
+    outline: none;
+    width: 360px;
+    height: 60px;
+    font-size: 40px;
+    border-radius: 40px;
+    border: none;
+    padding-left: 15px;
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.ltr-input:active {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.delete {
+    margin: 30px auto;
+    text-align: center;
+    width: 360px;
+}
+
+.delete > p {
+    font-size: 60px;
+}
+
+.hangman {
+    width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px auto;
+    cursor: pointer;
+}
+
+.word-find {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.all-ltrs {
+    display: flex;
+}
+
+.random-word {
+    color: #596dff;
+    font-size: 60px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.letter {
+    color: #596dff;
+    width: 50px;
+    position: relative;
+    font-size: 60px;
+    margin: 30px 0;
+    user-select: none;
+    text-align: center;
+    margin: 0px 30px;
+}
+
+.hidden {
+    color: #596cff00;
+    background-color: #596cff00;
+}
+
+.open {
+    color: #596dff;
+    background-color: #596dff;
+}
+
+.hinted {
+    color: #596dff;
+    animation: fade 2s;
+}
+
+@keyframes fade {
+    0% {
+        color: rgb(255, 255, 255);
+    }
+    100% {
+        color: #596dff;
+    }
+}
+
+.letter.open {
+    background-color: transparent;
+}
+
+.before {
+    width: 50px;
+    height: 5px;
+    background: #596dff;
+    margin: 0 auto;
+}
+
+.man {
+    border: 5px dashed #596dff;
+    width: 400px;
+    height: 300px;
+    display: flex;
+}
+
+.human {
+    top: 20px;
+    position: relative;
+    width: 100px;
+    height: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.head {
+    top: 10px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.body {
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hand1 {
+    position: absolute;
+    width: 8px;
+    height: 70px;
+    top: 60px;
+    transform: rotate(30deg);
+    left: 30%;
+}
+
+.hand2 {
+    position: absolute;
+    width: 8px;
+    height: 70px;
+    top: 60px;
+    transform: rotate(-30deg);
+    right: 30%;
+}
+
+.leg1 {
+    position: absolute;
+    width: 8px;
+    height: 70px;
+    top: 130px;
+    transform: rotate(30deg);
+    left: 30%;
+}
+
+.leg2 {
+    position: absolute;
+    width: 8px;
+    height: 70px;
+    top: 130px;
+    transform: rotate(-30deg);
+    right: 30%;
+}
+
+.sticks {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    left: 0px;
+    bottom: 0;
+}
+
+.stick1 {
+    top: 15px;
+    position: absolute;
+    width: 100px;
+    height: 10px;
+}
+
+.stick2 {
+    top: 15px;
+    position: absolute;
+    width: 10px;
+    height: 250px;
+}
+
+.ground {
+    top: 265px;
+    left: -50px;
+    position: absolute;
+    width: 300px;
+    height: 10px;
+}
+
+.rope {
+    top: 15px;
+    left: 32.5%;
+    position: absolute;
+    width: 8px;
+    height: 20px;
+}
+
+.info {
+    color: #596dff;
+    font-size: 60px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.hint {
+    color: #596dff;
+    font-size: 60px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+/*::selection*/

@@ -1,0 +1,363 @@
+.lorem {
+    width: 800px;
+    height: 44px;
+    margin: 0 auto;
+    margin-top: 50px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.p-points {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.range {
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.range > div {
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.range-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 35px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.range-button > span {
+    color: white;
+}
+
+.decrease {
+    background: rgb(255, 69, 69);
+}
+
+.increase {
+    background: rgb(69, 156, 255);
+}
+
+.char-submit {
+    width: 200px;
+    height: 35px;
+    margin: 0 auto;
+    background-color: rgb(0, 110, 255);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.char-submit > p {
+    font-size: 30px;
+}
+
+.dia-choose {
+    width: 1200px;
+    height: 300px;
+    background-color: cornflowerblue;
+    border-radius: 50px;
+    margin: 0 auto;
+    margin-top: -250px;
+    z-index: 3;
+}
+
+.d-answer {
+    display: flex;
+    margin: 100px auto;
+    width: 1200px;
+    justify-content: center;
+}
+
+.d-answer > div {
+    width: 200px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+@keyframes text {
+    0% {
+        width: 0;
+    }
+    30% {
+        width: 90%;
+    }
+}
+
+.rep {
+    width: 800px;
+    height: 44px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-rep {
+    width: 50px;
+}
+
+.added-rep {
+    width: 200px;
+    height: 44px;
+    margin: 0 auto;
+    font-size: 40px;
+    text-align: center;
+    opacity: 0;
+}
+
+.added-points {
+    width: 200px;
+    height: 44px;
+    margin: 0 auto;
+    font-size: 40px;
+    text-align: center;
+    opacity: 0;
+}
+
+.rep-anim {
+    animation: repAnim 1s ease-in-out;
+}
+
+@keyframes repAnim {
+    0% {
+        margin-top: 20px;
+    }
+    100% {
+        margin-top: -20px;
+        opacity: 0;
+    }
+}
+
+.character {
+    width: 400px;
+    height: 600px;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    -webkit-filter: brightness(70%); 
+}
+
+.char-1 {
+    width: 400px;
+    height: 600px;
+    position: absolute;
+}
+
+.dia-area {
+    display: flex;
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.dia-window {
+    display: flex;
+    margin: 0 auto;
+    width: 1200px;
+    justify-content: space-between; 
+    height: 700px;
+}
+
+.dia-skip {
+    width: 350px;
+    height: 70px;
+    background-color: cornflowerblue;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chars-right {
+    display: flex;
+    width: 200px;
+    transform: scale(-1, 1);
+    animation: float 5s infinite;
+}
+
+.chars-chat {
+    width: 600px;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.chars-left {
+    display: flex;
+    width: 200px;
+    animation: float 5s infinite;
+}
+
+.main-char {
+    -webkit-filter: brightness(100%); 
+    z-index: 10;
+}
+
+.char-left-message {
+    position: relative;
+    width: 450px;
+    background-color: cornflowerblue;
+    border-radius: 0px 20px 20px 20px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+}
+
+.char-right-message {
+    position: relative;
+    width: 450px;
+    background-color: rgb(161, 161, 161);
+    border-radius: 20px 0px 20px 20px;
+    margin-bottom: 30px;
+    margin-left: 95px;
+    margin-right: 40px;
+}
+
+.char-left-message::before {
+    content: '';
+    border-top: 40px solid cornflowerblue;
+    border-left: 40px solid transparent;
+    position: absolute;
+    left: -40px;
+}
+
+.char-right-message::before {
+    content: '';
+    border-top: 40px solid rgb(161, 161, 161);
+    border-right: 40px solid transparent;
+    position: absolute;
+    left: 410px;
+    right: -40px;
+}
+
+@keyframes float {
+    0% {
+        margin-top: 10px;
+    }
+    50% {
+        margin-top: -10px;
+    }
+    100% {
+        margin-top: 10px;
+    }
+}
+
+.clean-main {
+    width: 1300px;
+    height: 800px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.clean-todo, .clean-doing, .clean-done {
+    width: 250px;
+    height: 600px;
+    background-color: cornflowerblue;
+    border-radius: 50px;
+    border: 8px dashed rgb(34, 69, 134);
+    padding: 15px;
+}
+
+.clean-wait {
+    width: 250px;
+    height: 600px;
+    background-color: rgb(75, 119, 201);
+    border-radius: 50px;
+    border: 8px dashed rgb(19, 44, 92);
+    padding: 15px;
+}
+
+.item-to-clean {
+    width: 220px;
+    height: 70px;
+    background-color: rgb(151, 184, 245);
+    border-radius: 40px;
+    border: 5px dashed rgb(53, 93, 167);
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.item-to-clean > p {
+    font-size: 23px;
+    color: rgb(34, 69, 134);
+}
+
+.clean-h2 {
+    font-size: 40px;
+    color: rgb(34, 69, 134);
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.clean-h22 {
+    font-size: 40px;
+    color: rgb(19, 44, 92);
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.clean-time {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.clean-time-wrap {
+    display: flex;
+    width: 1050px;
+    margin: 0 auto;
+}
+
+.clean-timer {
+    color: rgb(34, 69, 134);
+    width: 400px;
+    height: 50px;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.clean-timer-time {
+    position: absolute;
+    color: rgb(34, 69, 134);
+    font-size: 40px;
+    width: 600px;
+    text-align: center;
+}
+
+.clean-timer-bg {
+    width: 600px;
+    height: 50px;
+    background: gray;
+    border-radius: 50px;
+}
+
+.clean-timer-bg > div {
+    width: 600px;
+    height: 50px;
+    background: cornflowerblue;
+    border-radius: 50px;
+    transition: all 1s;
+}
+
+.clean-timer-small {
+    color: rgb(34, 69, 134);
+    font-size: 30px;
+    text-align: center;
+}

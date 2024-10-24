@@ -12,36 +12,102 @@ html {
     position: fixed;
     display: flex;
     flex-direction: column;
-    margin-left: 90%;
+    margin-left: 78%;
     margin-top: 2%;
     z-index: 10;
+    z-index: 16;
 }
 
 .theme > p {
     margin: 0 auto;
+    font-size: 25px;
+}
+
+.main-select {
+    display: flex;
+    width: 380px;
+    justify-content: space-between;
 }
 
 .select {
-    width: 150px;
+    display: flex;
+    width: 165px;
     height: 50px;
     background: linear-gradient(90deg, #80a2ff, #3e5bff);
     border-radius: 40px;
     text-align: center;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
 }
 
 .select > p {
     font-size: 23px;
-    margin-top: 7px;
     color: white;
 }
 
+.select:first-child {
+    width: 200px;
+    height: 50px;
+}
 .select:hover {
     opacity: 90%;
 }
 
 .select:active {
     opacity: 50%;
+}
+
+.buttons, .button {
+    width: 50px;
+    height: 50px;
+    background: rgb(0, 0, 0);
+    border-radius: 40px;
+    margin-top: -50px;
+    z-index: 0;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lang-btn {
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.lang-btn > p {
+    color: white;
+    font-size: 30px;
+}
+
+.button > i {
+    margin-top: 4px;
+}
+
+.tumbler {
+    position: absolute;
+    background: #ffffff69;
+    width: 75px;
+    height: 50px;
+    border-radius: 40px;
+    transition: 1s;
+    left: -185px;
+}
+
+.snowfall {
+    z-index: 10;
 }
 
 @media screen and (max-width: 900px) {

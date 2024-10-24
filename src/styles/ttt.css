@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'Futura-PT';
+    src: url('./fonts/Futura\ PT.ttf');
+}
+
+h1 {
+    color: black;
+    text-align: center;
+}
+
+.grid-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: rgb(139, 139, 139);
+    margin: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-ttt {
+    margin: 0px auto;
+    width: 310px;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    z-index: 19;
+}
+
+i, .far {
+    color: #fff;
+    font-size: 50px;
+}
+
+.win-line {
+    opacity: 0%;
+    position: absolute;
+    background-color: rgb(255, 0, 0);
+    width: 320px;
+    height: 13px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+p {
+    color: black;
+    font-size: 40px;
+    margin: 0 auto;
+}
+
+@keyframes winLine {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}

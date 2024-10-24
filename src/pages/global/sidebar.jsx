@@ -2,6 +2,7 @@ import { useState } from 'react/cjs/react.development'
 import '../../styles/sidebar.css'
 
 import { BrowserRouter, Link, Route, Routes} from 'react-router-dom';
+import logo from './../../images/logo.png'
 
 let current = 'MainPage'
 
@@ -9,6 +10,8 @@ const Sidebar = (props) => {
     const [width, chWidth] = useState('60px')
     const [opacity, chOpacity] = useState('0%')
     const [opacity2, chOpacity2] = useState('0%')
+    const [bg, chBg] = useState('rgba(0, 0, 0, 0)')
+    const [zi, chZi] = useState('0')
     const [trans, chTrans] = useState('all 0.5s')
     const folder = 'fas fa-folder'
     const folderOpen = 'fas fa-folder-open'
@@ -22,6 +25,8 @@ const Sidebar = (props) => {
             chWidth('270px')
             chOpacity('100%')
             chTrans('all 1s')
+            chBg('rgba(0, 0, 0, 0.5)')
+            chZi('0')
             chFolder(folderOpen)
         } else {
             chWidth('60px')
@@ -29,13 +34,15 @@ const Sidebar = (props) => {
             chOpacity('0%')
             chOpacity2('0%')
             chTrans('all 0.5s')
+            chBg('rgba(0, 0, 0, 0)')
+            chZi('0')
             chFolder(folder)
         }
     }
 
     function change2() {
         if(height === '0px') {
-            chHeight('90px')
+            chHeight('180px')
             chOpacity2('100%')
         } else {
             chHeight('0px')
@@ -48,45 +55,17 @@ const Sidebar = (props) => {
         console.log(current)
     }
     return (
-        <div className = 'sidebar' style = {{width: width, transition: trans, background: props.bg}}>
-            <div className = 'header'>
-                <i className={currentFolder} onClick = {change}></i>
-                <p className="name" style = {{opacity: opacity}}>Меню</p>
-            </div>
-            <nav>
-                <div className = 'elements'>
-                    <div className="el" style = {{width: width, transition: trans}}>
-                        <i className="fas fa-calculator"></i>
-                        <Link className="name calcul" style = {{opacity: opacity}} to = '/calculator'>Калькулятор</Link>
-                    </div>
-                    <div className="el" style = {{width: width, transition: trans}}>
-                        <i className="fas fa-gamepad"></i>
-                        <p className="name game" style = {{opacity: opacity}} onClick = {change2}>Развлечения</p>
-                    </div>
-
-                    <div className = 'sub-el-div' style = {{height: height, opacity: opacity2}}>
-                        <div className = 'sub-el' style = {{width: width, transition: trans}}>
-                            <i className="fas fa-heart"></i>
-                            <Link className="name game" style = {{opacity: opacity}} to = './divination'>Гадание по картам</Link>
-                        </div>
-                        <div className = 'sub-el' style = {{width: width, transition: trans}}>
-                            <i className="fas fa-dice-five"></i>
-                            <p className="name game" style = {{opacity: opacity}}>Рандомайзер</p>
-                        </div>
-                    </div>
-
-                    <div className="el" style = {{width: width, transition: trans}}>
-                        <i className="fas fa-cloud"></i>
-                        <p className="name weather" style = {{opacity: opacity}}>Погода</p>
-                    </div>
-                    <div className="el" style = {{width: width, transition: trans}}>
-                        <i className="fas fa-table"></i>
-                        <p className="name table" style = {{opacity: opacity}}>Таблица менделеева</p>
-                    </div>
-                    <div className="el" style = {{width: width, transition: trans}}>
-                        <i className="fas fa-file-alt"></i>
-                        <Link className="name calcul" style = {{opacity: opacity}} to = '/tests'>Тесты</Link>
-                    </div>
+        <div className='navhover'>
+            <nav className = 'navtop'>
+                <div className="el" style = {{transition: trans}}>
+                    <img className='ittaboo-logo' src={logo}></img>
+                    <Link className="name calcul" to = '/calculator'>Инструменты</Link>
+                    <p className = "name p-name">|</p>
+                    <Link className="name calcul" to = '/calculator'>О нас</Link>
+                    <p className = "name p-name">|</p>
+                    <Link className="name calcul" to = '/calculator'>Соцсети и Контакты</Link>
+                    <p className = "name p-name">|</p>
+                    <Link className="name calcul" to = '/calculator'>Донаты</Link>
                 </div>
             </nav>
         </div>

@@ -8,81 +8,178 @@ import Calculator from './pages/Calculator.jsx';
 import Divination from './pages/Divination.jsx';
 import Sidebar from './pages/global/sidebar.jsx';
 import Tests from './pages/Tests';
-import Effect from './components/effect.jsx'
+import TicTacToe from './pages/TicTacToe';
 
-import CurPage from './pages/Current.jsx';
+import Snowfall from 'react-snowfall';
 
-import { HashRouter, Link, Route, Routes} from 'react-router-dom';
+import { HashRouter, Link, Route, Routes, useLocation} from 'react-router-dom';
+
+import lightColors from './arrays/lightcolors';
+import darkColors from './arrays/darkcolors';
+import rusTexts from './arrays/rustexts';
+import engTexts from './arrays/engtexts';
+import Hangman from './pages/hangman';
+import TextQuest from './pages/TextQuest';
+
+function CurrentPage() {
+  const location = useLocation(); // useLocation работает только внутри компонентов, обёрнутых в Router
+
+  return (
+    <div>
+      {/*location.pathname === '/' && <p>Текущий путь: {location.pathname}</p> <p>Ты на главной странице</p>*/}
+      {location.pathname === '/calculator' && <Snowfall color = "white" className = 'snowfall'/>}
+    </div>
+  );
+}
 
 function App() {
-    const [darkColors, changeDark] = useState(['linear-gradient(90deg, #3c61c9, #243cc4)', 'linear-gradient(90deg, #243cc4, rgb(41, 26, 173))', 'linear-gradient(90deg, rgb(41, 26, 173), #28057a)', 'linear-gradient(90deg, #3c61c9, #243cc4, rgb(41, 26, 173), #28057a)'])
-    const [lightColors, changeLight] = useState(['linear-gradient(90deg, #80a2ff, #3e5bff)', 'linear-gradient(90deg, #5770ff, #2824ff)', 'linear-gradient(90deg, #423fff, #4b18c2)'])
-    const [textColor, changeTextColor] = useState('')
-    const [theme, changeTheme] = useState('Светлая')
-    const [background, changeBg] = useState('#e6e6ff')
-    const [h1col, changeH1] = useState('rgb(31, 84, 255)')
+    const [translate, changeTr] = useState('Русский')
+    const [colors, changeColors] = useState(lightColors)
+    const [lang, changeLang] = useState(rusTexts)
 
-    const [opacity1, changeOpacity1] = useState('rgba(0, 0, 0, 0.082)')
+    const [theme, changeTheme] = useState(lang.app['2'])
+    const [opacity, chOp] = useState('0')
+    const [opacity2, chOp2] = useState('0')
+    const [left, chLeft] = useState('0px')
+    const [left2, chLeft2] = useState('0px')
+    const [width, chWidth] = useState('0px')
+    const [width2, chWidth2] = useState('0px')
+    const [width3, chWidth3] = useState('0px')
+    const [trans, chTrans] = useState('all 0s')
 
-    const [calcbg, changeCalc] = useState('transparent')
-    const [calccol, changeCalccol] = useState('rgba(0, 0, 0, 0.4)')
+    const [tumbler, chTubmler] = useState('-185px')
 
-    const [sidebarBg, changeSidebar] = useState('linear-gradient(110deg, #7da0ff 15%, #3700ff)')
-    const [testbg, changeTest] = useState('#5f77ff73')
-    
+    const [clickable, chClick] = useState(false)
+
     function changeTheme1() {
-        if(theme === 'Светлая') {
-            changeTheme('Тёмная')
-            changeTextColor('#ff59a6')
-            changeBg('#220115')
-            changeDark(['linear-gradient(90deg, #b82e73, #cc1e83)', 'linear-gradient(90deg, #b31a85, #490b9b)', 'linear-gradient(90deg, #580eac, #3706a8)', 'linear-gradient(90deg, #b82e73, #cc1e83, #580eac, #3706a8)'])
-            changeLight(['linear-gradient(90deg, #ff80c0, #ff3eaf)', 'linear-gradient(90deg, #ff57cd, #8324ff)', 'linear-gradient(90deg, #993fff, #5107ff)'])
-            changeH1('rgb(255, 36, 120)')
-
-            changeOpacity1('rgba(0, 0, 0, 0.5)')
-            changeCalc('rgba(255, 255, 255, 0.05)')
-            changeCalccol('rgba(255, 255, 255, 0.4)')
-
-            changeSidebar('linear-gradient(110deg, #ff4e98 15%, #b700ff)')
-            changeTest('#ff5f9c73')
+        if(theme === 'Светлая' || theme === 'Light') {
+            changeColors(darkColors)
+            if(lang === rusTexts) {
+                changeTheme('Тёмная')
+            }
+            if(lang === engTexts) {
+                changeTheme('Dark')
+            }
         }
-        if(theme === 'Тёмная') {
-            changeTheme('Светлая')
-            changeTextColor('#596dff')
-            changeBg('#e6e6ff')
-            changeDark(['linear-gradient(90deg, #3c61c9, #243cc4)', 'linear-gradient(90deg, #243cc4, rgb(41, 26, 173))', 'linear-gradient(90deg, rgb(41, 26, 173), #28057a)', 'linear-gradient(90deg, #3c61c9, #243cc4, rgb(41, 26, 173), #28057a)'])
-            changeLight(['linear-gradient(90deg, #80a2ff, #3e5bff)', 'linear-gradient(90deg, #5770ff, #2824ff)', 'linear-gradient(90deg, #423fff, #4b18c2)'])
-            changeH1('rgb(31, 84, 255)')
-
-            changeOpacity1('rgba(0, 0, 0, 0.082)')
-            changeCalc('transparent')
-            changeCalccol('rgba(0, 0, 0, 0.4)')
-
-            changeSidebar('linear-gradient(110deg, #7da0ff 15%, #3700ff)')
-            changeTest('#5f77ff73')
+        if(theme === 'Тёмная' || theme === 'Dark') {
+            changeColors(lightColors)
+            if(lang === rusTexts) {
+                changeTheme('Светлая')
+            }
+            if(lang === engTexts) {
+                changeTheme('Light')
+            }
         }
-        console.log('Тема сменена на ' + theme)
     }
+
+    function changeTheme2() {
+        chTrans('all 1s')
+
+        chOp('0.4')
+        chLeft('-185px')
+        chLeft2('-245px')
+        chWidth('165px')
+        chWidth2('50px')
+        chWidth3('82.5px')
+        chOp2('1')
+
+        chClick(true)
+    }
+
+    function close() {
+        chOp('0')
+        chOp2('0')
+        chLeft('0px')
+        chLeft2('0px')
+        chWidth('0px')
+        chWidth2('0px')
+        chWidth3('0px')
+        chTrans('all 1s')
+        chClick(false)
+    }
+
+    function langChange(tr) {
+        if(clickable === true) {
+            if(tr === 'English') {
+                changeLang(engTexts)
+                changeTr('English')
+                let newTheme = ''
+                switch(theme) {
+                    case 'Светлая':
+                        newTheme = 'Light'
+                        break
+                    case 'Тёмная':
+                        newTheme = 'Dark'
+                        break
+                    default: 
+                        break
+                }
+                changeTheme(newTheme)
+                chTubmler('-102.5px')
+            }
+            if(tr === 'Русский') {
+                changeLang(rusTexts)
+                changeTr('Русский')
+                let newTheme = ''
+                switch(theme) {
+                    case 'Light':
+                        newTheme = 'Светлая'
+                        break
+                    case 'Dark':
+                        newTheme = 'Тёмная'
+                        break
+                    default: 
+                        break
+                }
+                changeTheme(newTheme)
+                chTubmler('-185px')
+            }
+        }
+    }
+    //fire-alt burn
     return (
         <HashRouter>
             <div className = 'App'>
+                {/* 
                 <div className = 'theme'>
-                    <div style = {{background: lightColors[0]}} className = 'select' onClick = {changeTheme1}>
-                        <p>Сменить тему</p>
+                    <div className = 'main-select'>
+                        <div className = 'lang'>
+                            <div style = {{background: colors['gradient1'][0]}} className = 'select' onClick = {changeTheme2}>
+                                <p>{lang.app['4']}</p>
+                            </div>
+                            <div className = 'button' style = {{opacity: opacity, marginLeft: left2, width: width2, transition: trans}} onClick = {close}>
+                                <i className = 'fas fa-arrow-right'></i>
+                            </div>
+                            <div className = 'buttons' style = {{opacity: opacity, marginLeft: left, width: width, transition: trans}}>
+                                <div className = 'lang-btn' onClick = {() => {langChange('Русский')}} style = {{opacity: opacity2}}>
+                                    <p>Рус</p>
+                                </div>
+                                <div className = 'lang-btn' onClick = {() => {langChange('English')}} style = {{opacity: opacity2}}>
+                                    <p>Eng</p>
+                                </div>
+                                <div className = 'tumbler' style = {{left: tumbler, width: width3}}></div>
+                            </div>
+                        </div>
+                        <div style = {{background: colors['gradient1'][0]}} className = 'select' onClick = {changeTheme1}>
+                            <p>{lang.app['0']}</p>
+                        </div>
                     </div>
-                    <p style = {{color: textColor}}>Тема: {theme}</p>
+                    <p style = {{color: colors['text']}}>{lang.app['1']} {theme}</p>
                 </div>
-                <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
-                <Sidebar bg = {sidebarBg}/>
+                */ }
+                <Sidebar colors = {colors} text = {lang}/>
+                {/*<Snowfall color = "white" className = 'snowfall'/>*/}
                 
                 <Routes>
-                    <Route path = '/' element = {<MainPage bg = {background} h1col = {h1col} textcol = {textColor} lc = {lightColors}/>}></Route>
-                    <Route path = '/calculator' element = {<Calculator h1col = {h1col} lc = {lightColors} bg = {background} calcbg = {calcbg} calccol = {calccol}/>}></Route>
-                    <Route path = '/divination' element = {<Divination textcol = {textColor} bg = {background} dc = {darkColors} lc = {lightColors} h1col = {h1col} opacity = {opacity1}/>}></Route>
-                    <Route path = '/tests' element = {<Tests h1col = {h1col} textcol = {textColor} bg = {background} lc = {lightColors} testbg = {testbg}/>}></Route>
+                    <Route path = '/' element = {<MainPage colors = {colors} text = {lang}/>}></Route>
+                    <Route path = '/calculator' element = {<Calculator colors = {colors} text = {lang}/>}></Route>
+                    <Route path = '/divination' element = {<Divination colors = {colors} text = {lang}/>}></Route>
+                    <Route path = '/tic-tac-toe' element = {<TicTacToe/>}></Route>
+                    <Route path = '/hangman' element = {<Hangman/>}></Route>
+                    <Route path = '/tests' element = {<Tests/>}></Route>
                 </Routes>
             </div>
+        <CurrentPage/>
         </HashRouter>
     );
 }

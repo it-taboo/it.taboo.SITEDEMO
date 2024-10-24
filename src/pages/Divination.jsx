@@ -4,35 +4,35 @@ import './../styles/divination.css'
 import Tilt from 'react-vanilla-tilt'
 
 const Divination = (props) => {
-    const [lifeCol, changeLifeCol] = useState(props.dc[0])
-    const [loveCol, changeLoveCol] = useState(props.dc[1])
-    const [otherCol, changeOtherCol] = useState(props.dc[2])
+    const [lifeCol, changeLifeCol] = useState(props.colors['gradient1'][0])
+    const [loveCol, changeLoveCol] = useState(props.colors['gradient1'][1])
+    const [otherCol, changeOtherCol] = useState(props.colors['gradient1'][2])
  
-    const [buttonCol, changeButtonCol] = useState(props.dc[3])
+    const [buttonCol, changeButtonCol] = useState(props.colors['gradient1'][3])
 
     const [divCur, changeCur] = useState('none')
     const [placeholder, changePh] = useState('')
 
     function changeCol(type) {
-        changeLifeCol(props.dc[0])
-        changeLoveCol(props.dc[1])
-        changeOtherCol(props.dc[2])
+        changeLifeCol(props.colors['gradient1'][0])
+        changeLoveCol(props.colors['gradient1'][1])
+        changeOtherCol(props.colors['gradient1'][2])
 
         if(type === 'life') {
-            changeLifeCol(props.lc[0])
-            changeButtonCol(props.lc[0])
+            changeLifeCol(props.colors['gradient1'][0])
+            changeButtonCol(props.colors['gradient1'][0])
             changeCur('life')
             changePh('')
         }
         if(type === 'love') {
-            changeLoveCol(props.lc[1])
-            changeButtonCol(props.lc[1])
+            changeLoveCol(props.colors['gradient1'][1])
+            changeButtonCol(props.colors['gradient1'][1])
             changeCur('love')
             changePh('')
         }
         if(type === 'other') {
-            changeOtherCol(props.lc[2])
-            changeButtonCol(props.lc[2])
+            changeOtherCol(props.colors['gradient1'][2])
+            changeButtonCol(props.colors['gradient1'][2])
             changeCur('other')
             changePh('Имя человека')
         }
@@ -111,8 +111,8 @@ const Divination = (props) => {
                 <h2 style = {{color: props.h1col}}>Гадалка</h2>
             </div>
 
-            <div style = {{background: props.lc[0]}} className = 'circle9'></div>
-            <div style = {{background: props.lc[2]}} className = 'circle10'></div>
+            <div style = {{background: props.colors['gradient1'][0]}} className = 'circle9'></div>
+            <div style = {{background: props.colors['gradient1'][2]}} className = 'circle10'></div>
             <div className = 'div-select'>
                     <h2 style = {{color: props.textcol}}>Погадать о:</h2>
                     <div className="div-choose" style = {{backgroundColor: props.opacity}}>
